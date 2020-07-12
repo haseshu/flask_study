@@ -1,6 +1,19 @@
 {% extends "layout.html" %}
 {% block body %}
-投稿がありませんyo
+
+<ul class="list_group list-group-flush">
+    {% for entry in entries %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ entry.title }}</h5>
+                <a href="{{ url_for('show_entry', id=entry.id)}}" class="card_link">続きを読む</a>
+            </div>
+        </div>
+    {% else %}
+        投稿がありませんyo
+    {% endfor %}
+</ul>
+
 {% endblock %}
 
 

@@ -16,3 +16,4 @@ RUN pip install --upgrade setuptools
 RUN pip install Flask
 RUN pip install Flask-SQLAlchemy
 RUN pip install Flask-Script
+RUN python manage.py init_db
