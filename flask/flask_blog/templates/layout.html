@@ -10,7 +10,7 @@
 
 <di vclass="container">
     <nav class="navbarnavbar-expand-lgnavbar-lightbg-light">
-        <a class="navbar-brand"href="{{ url_for('show_entries') }}">FlaskBlog</a>
+        <a class="navbar-brand"href="{{ url_for('entry.show_entries') }}">FlaskBlog</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,14 +19,14 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if not session.logged_in %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login') }}">ログイン</a>
+                    <a class="nav-link" href="{{ url_for('view.login') }}">ログイン</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">ログアウト</a>
+                    <a class="nav-link" href="{{ url_for('view.logout') }}">ログアウト</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('new_entry') }}">新規投稿</a>
+                    <a class="nav-link" href="{{ url_for('entry.new_entry') }}">新規投稿</a>
                 </li>
 
                 {% endif %}
