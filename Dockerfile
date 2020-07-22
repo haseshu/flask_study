@@ -24,4 +24,6 @@ WORKDIR /flask
 
 
 RUN python manage.py init_db
-ENTRYPOINT python server.py
+RUN FLASK_ENV=flask_blog
+ENTRYPOINT flask run -h 0.0.0.0 -p $PORT
+#ENTRYPOINT python server.py
