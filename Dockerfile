@@ -22,9 +22,10 @@ RUN pip install coverage
 COPY ./flask ./flask
 WORKDIR /flask
 
-
-RUN python manage.py init_db
 ENV FLASK_APP=flask_blog
-ENV FLASK_ENV=development 
+ENV FLASK_ENV=development
+RUN echo $FLASK_APP
+RUN python manage.py init_db
+
 ENTRYPOINT flask run -h 0.0.0.0 -p $PORT
 #ENTRYPOINT python server.py
