@@ -27,5 +27,6 @@ ENV FLASK_ENV=development
 RUN echo $FLASK_APP
 RUN python manage.py init_db
 
-ENTRYPOINT flask run -h 0.0.0.0 -p $PORT
+CMD flask run -h 0.0.0.0 -p $PORT
+#ENTRYPOINT flask run -h 0.0.0.0 -p 5000
 #ENTRYPOINT python server.py
